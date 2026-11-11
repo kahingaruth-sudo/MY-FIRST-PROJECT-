@@ -1,0 +1,9 @@
+Hello!
+      
+      I am learning GitHub as a begginer.
+
+
+      My goal is to develop my technology skills. I am interested in coding, data analysis and AI.
+
+
+      This is my first GitHub project.
