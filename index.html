@@ -54,21 +54,44 @@ HTML
       <h2>Chicken Shawarma</h2>
       <p>Best in Kasrouane!</p>
       <p class="price">$5</p>
-      <button>Order Now</button>
+      <button onclick="addToCart(5)">Order Now - $5</button>
      </div>
 
       <div class="card">
         <h2>Beef Shawarma</h2>
         <p class="price">$6</p>
-        <button>Order now</button>
+        <button onclick="addToCart(6)">Order now - $6</button>
       </div>
 
       <div class="card">
         <h2>Falafel Wrap</h2>
         <p>Crispy & fresh</p>
         <p class="price">$4</p>
-        <button>Order Now</button>
+        <button onclick="addToCart(4)">Order Now - $4</button>
       </div>
     </div>
+    <div id="cart" style="position:fixed; bottom:20px; background:#ff6b00; color: white; padding:15px 20px; border-radius:50px; font-weight:bold; box-shadow:0 5px 15px rgba(0,0,0,0.3);">
+    🛒 Cart: <span id="count">0</span>items - $<span id="total">0</span>
+      <button onclick="orderNow()" style="background: white; color:#ff6b00; border:none; padding:5px 10px; border-radius:20px; margin-left:10px; font-weight:bold;">Order on Whatsapp</button>/button>
+    </div>
+
+      <script>
+      let count = 0;
+      let total = 0;
+
+        function addToCart(price) {
+           count++;
+          total += price;
+          document.getElementById('count').innerText = count;
+          document.getElementBtId('total'). innerText = total;
+          alert('added! Total: $' + total);
+        }
+
+        function orderNow() {
+          if(count == 0) {alert('your cart is empty!'); return; }
+            let msg = 'Hi, I want to order '+ ' items. Total:$' total;
+            window.open('https://wa.me/254736980539?text=' +encodeUrLComponent(msg));
+        }
+        </script>
     </body>
     </html>
